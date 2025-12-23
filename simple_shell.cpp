@@ -10,7 +10,13 @@
 using namespace std;
 
 /* =====================================================
-   TEAM MEMBER 1
+   Part 1
+   Code Overview
+   ===================================================== */
+
+
+/* =====================================================
+   Part 2
    String Utilities & Parsing Helpers
    - cleanToken
    - split
@@ -63,7 +69,7 @@ vector<char*> buildArgs(vector<string>& args) {
 }
 
 /* =====================================================
-   TEAM MEMBER 2
+   Part 3
    Core Command Execution (No fork)
    - executeBase
    ===================================================== */
@@ -123,7 +129,7 @@ void executeBase(string cmd) {
 }
 
 /* =====================================================
-   TEAM MEMBER 3
+   Part 4
    Single Command Execution
    - execSingle
    ===================================================== */
@@ -147,7 +153,7 @@ int execSingle(string cmd) {
 }
 
 /* =====================================================
-   TEAM MEMBER 4
+   Part 5
    Pipe Handling
    - execPipe
    ===================================================== */
@@ -190,7 +196,7 @@ int execPipe(string left, string right) {
 }
 
 /* =====================================================
-   TEAM MEMBER 5
+   Part 6
    Prompt Display
    - printPrompt
    ===================================================== */
@@ -214,7 +220,7 @@ void printPrompt() {
 }
 
 /* =====================================================
-   TEAM MEMBER 6 & 7
+   Part 7
    Main Shell Logic
    - command loop
    - handling ; && |
@@ -239,11 +245,9 @@ int main() {
 
             // split by &&
             auto andParts = split(cmd, "&&");
-
             for (auto& part : andParts) {
 
                 int status = 0;
-
                 if (part.find('|') != string::npos) {
                     size_t pos = part.find('|');
                     status = execPipe(
